@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Cart - Shoes Ecommerce Website</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav">
+            <a href="{% url 'index' %}" class="logo">tigrun</a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}#hero">home</a></li>
+                    <li><a href="{% url 'index' %}#arrival">new arrival</a></li>
+                    <li><a href="{% url 'index' %}#collection">best collection</a></li>
+                    <li><a href="{% url 'index' %}#about">about</a></li>
+                </ul>
+                <div class="nav-icon">
+                    <a href="{% url 'cart' %}" id="cart-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+            <i class="fa-solid fa-bars burger_icon"></i>
+        </div>
+    </header>
+
+    <main class="container cart">
+        <h2 class="heading-two">Your Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-total">
+            <h3 class="heading-three">Total: <span id="cart-total">$0</span></h3>
+            <button class="btn" onclick="window.location.href='{% url 'checkout' %}'">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

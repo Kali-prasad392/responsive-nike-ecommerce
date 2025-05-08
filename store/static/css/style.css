@@ -1,0 +1,916 @@
+/* ============== Reset HTML Tags ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-clr);
+}
+
+p {
+    color: var(--primary-clr-light);
+}
+
+body {
+    background-color: var(--dark-clr);
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--primary-clr-light);
+    border-radius: 60px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: var(--gra-primary);
+    border-radius: 20px;
+}
+
+/* ================== Variables ============= */
+:root {
+    /* Padding */
+    --p-xm: 4px;
+    --p-sm: 10px 14px;
+    --p-md: 12px 16px;
+    --p-lg: 16px 24px;
+    --container-pad: 60px 40px;
+    --section-heading-pad: 44px 40px;
+
+    /* Margin */
+    --m-xm: 4px 0;
+    --m-sm: 8px 0;
+    --m-md: 12px 0;
+    --m-t-b: 10px 0;
+    --m-t-b-md: 20px 0;
+
+    /* Colors */
+    --primary-clr: #fff;
+    --primary-clr-light: #dedede;
+    --first-gra-clr: #c32bfb;
+    --second-gra-clr: #f818d2;
+    --dark-clr: #12011b;
+    --light-bg: #ffffff19;
+
+    /* Gradients */
+    --gra-white: linear-gradient(45deg, #fff, #dedede);
+    --gra-primary: linear-gradient(45deg, #c32bfb, #f818d2);
+
+    /* Font Sizes */
+    --font-sm: 0.8rem;
+    --font-nr: 1rem;
+    --font-md: 1.2rem;
+
+    /* Border Radius */
+    --border-radius-full: 50%;
+    --section-rad: 12px;
+    --btn-radius: 4px;
+    --card-rad: 8px;
+
+    /* Transitions */
+    --transition-one: all 0.25s ease;
+    --transition-two: all 0.5s linear;
+}
+
+/* =================== Custom Universal Classes =========== */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: var(--container-pad);
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    width: 1280px;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1280px;
+    padding: var(--section-heading-pad);
+    z-index: 100;
+}
+
+.section-heading .sub-heading {
+    color: var(--primary-clr-light);
+}
+
+.heading-one {
+    font-size: 4rem;
+    color: var(--primary-clr);
+}
+
+.heading-two {
+    font-size: 2.8rem;
+}
+
+.heading-three {
+    font-size: 1.4rem;
+}
+
+.heading-one span,
+.heading-two span {
+    color: var(--first-gra-clr);
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-image: var(--gra-primary);
+    color: var(--primary-clr);
+    border-radius: var(--btn-radius);
+    padding: var(--p-sm);
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--transition-one);
+    font-size: var(--font-nr);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-image: var(--gra-white);
+    color: var(--dark-clr);
+}
+
+.clr-one,
+.clr-two {
+    position: absolute;
+    border-radius: var(--border-radius-full);
+    opacity: 0.4;
+    filter: blur(200px);
+}
+
+.clr-one {
+    width: 800px;
+    height: 800px;
+    top: -250px;
+    left: -400px;
+    background-color: var(--first-gra-clr);
+}
+
+.clr-two {
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    background-color: var(--second-gra-clr);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================== Cart & Checkout Page ============================== */
+.cart-checkout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+}
+
+.cart-section,
+.checkout-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--light-bg);
+    border-radius: var(--card-rad);
+    backdrop-filter: blur(10px);
+}
+
+.cart-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-clr);
+}
+
+.cart-item p {
+    font-size: 1rem;
+    color: var(--primary-clr-light);
+}
+
+.cart-item input {
+    width: 60px;
+    padding: 5px;
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--first-gra-clr);
+    background-color: transparent;
+    color: var(--primary-clr);
+}
+
+.cart-item button {
+    background-color: var(--first-gra-clr);
+    color: var(--primary-clr);
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+    transition: var(--transition-one);
+}
+
+.cart-item button:hover {
+    background-color: var(--second-gra-clr);
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-total h3 {
+    font-size: 1.5rem;
+    color: var(--primary-clr);
+}
+
+/* Checkout Form */
+.checkout-section {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: var(--card-rad);
+    backdrop-filter: blur(10px);
+}
+
+.checkout-section h2 {
+    margin-bottom: 20px;
+}
+
+.checkout-section .form-group {
+    margin-bottom: 15px;
+}
+
+.checkout-section .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary-clr);
+}
+
+.checkout-section .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--first-gra-clr);
+    background-color: transparent;
+    color: var(--primary-clr);
+}
+
+.checkout-section .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .cart-checkout {
+        flex-direction: column;
+    }
+
+    .cart-section,
+    .checkout-section {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================== Header Section ============================== */
+header {
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--light-bg);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+}
+
+header .nav {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 150px;
+    position: relative;
+}
+
+header .nav .logo {
+    font-size: var(--font-md);
+    font-weight: bold;
+    font-style: oblique;
+    color: var(--primary-clr);
+}
+
+.nav nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.nav nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav .nav-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#cart-count {
+    color: white;
+}
+
+.fa-solid {
+    color: var(--primary-clr);
+    transition: var(--transition-one);
+}
+
+.fa-solid:hover {
+    color: var(--first-gra-clr);
+}
+
+header .burger_icon {
+    display: none;
+}
+
+/* ============================== Hero Section ============================== */
+.col-text {
+    align-self: flex-start;
+    padding-top: 100px;
+}
+
+.col-img {
+    flex: 1.8;
+}
+
+.col-img .hero-img-off {
+    width: 260px;
+    padding: 20px 10px;
+    background-color: var(--light-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--card-rad);
+    position: absolute;
+    bottom: 160px;
+    left: 400px;
+}
+
+.col-img .hero-img-off p {
+    font-size: var(--font-sm);
+    color: var(--primary-clr-light);
+}
+
+.col-img .hero-img-off h3 {
+    color: var(--primary-clr);
+}
+
+.hero button {
+    margin: var(--m-t-b-md);
+    width: 200px;
+    height: 44px;
+    border-radius: 30px;
+}
+
+/* ============================== New Arrival Section ============================== */
+.arrival .col {
+    border-radius: var(--card-rad);
+    padding: var(--p-sm);
+}
+
+.arrival .col figure {
+    border-radius: var(--btn-radius);
+    background-color: var(--light-bg);
+}
+
+.col-body {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.col-body .rating-icon {
+    font-size: var(--font-sm);
+}
+
+.col .rating-icon .fa-star {
+    color: #ffd700;
+}
+
+.col-body .sub-heading {
+    font-size: var(--font-sm);
+    color: var(--primary-clr-light);
+}
+
+.col-body .col-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--m-sm);
+}
+
+.col-body .col-footer button {
+    width: 100px;
+    height: 36px;
+    font-size: var(--font-sm);
+}
+
+/* ============================== About Us Section ============================== */
+.about .wrapper {
+    z-index: 100;
+}
+
+.about .col-text .sub-heading {
+    color: var(--first-gra-clr);
+}
+
+.about .col-text .about-text {
+    font-size: 0.9rem;
+    margin: var(--m-md);
+}
+
+.about .col-text .btn {
+    width: 120px;
+    height: 40px;
+    font-size: var(--font-sm);
+    margin: var(--m-t-b);
+}
+
+.get-off {
+    width: 180px;
+    padding: var(--p-sm);
+    background-color: var(--light-bg);
+    border-radius: var(--btn-radius);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.get-off p {
+    font-size: 0.7rem;
+    word-break: break-all;
+}
+
+/* ============================== Best Collection Section ============================== */
+.collection .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+    width: 1280px;
+}
+
+.collection .collection-item {
+    transition: var(--transition-one);
+}
+
+.collection .grid-wrapper figure {
+    background-color: var(--light-bg);
+    border-radius: var(--card-rad);
+}
+
+.collection .btn-col {
+    margin-right: 5px;
+    border: 1px solid var(--first-gra-clr);
+    background-color: transparent;
+    color: var(--first-gra-clr);
+    width: 120px;
+    height: 44px;
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+    transition: var(--transition-one);
+}
+
+.collection .btn-col.btn:hover {
+    background-color: var(--primary-clr);
+    color: var(--dark-clr);
+}
+
+.hide {
+    display: none;
+}
+
+/* ============================== Testimonial Section ============================== */
+.testimonial .sub-heading {
+    color: var(--first-gra-clr);
+    font-weight: bold;
+}
+
+.testimonial .wrapper {
+    gap: 30px;
+    align-items: center;
+}
+
+.testimonial figure {
+    width: 80px;
+}
+
+.testimonial .col {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 1.2rem 1.4rem;
+    border-radius: var(--btn-radius);
+    background-color: var(--light-bg);
+    backdrop-filter: blur(10px);
+    z-index: 200;
+}
+
+.testimonial .col p {
+    font-size: var(--font-sm);
+    word-break: break-all;
+}
+
+.testimonial .col h3 {
+    color: var(--first-gra-clr);
+}
+
+.testimonial .fa-star {
+    color: #ffd700;
+    margin-right: 4px;
+}
+
+/* ============================== Subscribe Section ============================== */
+.subscribe .wrapper {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    border-radius: var(--section-rad);
+    padding: 100px;
+}
+
+.subscribe form {
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe form input {
+    width: 100%;
+    padding: var(--p-sm);
+    border: none;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.subscribe form .btn {
+    border-radius: 0 4px 4px 0;
+    width: 140px;
+    height: 40px;
+}
+
+/* ============================== Cart Page ============================== */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--light-bg);
+    border-radius: var(--card-rad);
+}
+
+.cart-item input {
+    width: 50px;
+    padding: 5px;
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--first-gra-clr);
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* ============================== Checkout Page ============================== */
+.checkout .form-group {
+    margin-bottom: 20px;
+}
+
+.checkout .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkout .form-group input {
+    width: 100%;
+    padding: var(--p-sm);
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--first-gra-clr);
+}
+
+/* ============================== Footer ============================== */
+footer {
+    background-color: #160021;
+}
+
+footer .wrapper .logo {
+    color: var(--first-gra-clr);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--font-nr);
+    font-style: oblique;
+}
+
+footer .wrapper {
+    justify-content: center;
+    align-items: center;
+}
+
+footer .wrapper .col {
+    gap: 20px;
+}
+
+footer .wrapper .col:nth-child(1) {
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: var(--first-gra-clr);
+}
+
+/* ============================== Animations ============================== */
+@keyframes changing {
+    0% {
+        background-color: #c32bfb;
+    }
+    40% {
+        background-color: #ff21ff;
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.4;
+        background-color: #cc41ff;
+    }
+    80% {
+        opacity: 0.6;
+        background-color: #b60af5;
+    }
+    100% {
+        background-color: #c32bfb;
+    }
+}
+
+.clr-one,
+.clr-two {
+    animation: changing 2.5s linear infinite;
+}
+
+/* ============================== Responsive Design ============================== */
+@media screen and (max-width: 600px) {
+    .wrapper,
+    .grid-wrapper,
+    .section-heading {
+        flex-direction: column;
+        align-items: center;
+        max-width: 560px;
+        min-width: 340px;
+    }
+
+    .heading-one {
+        font-size: 2.6rem;
+    }
+
+    .heading-two {
+        font-size: 1.8rem;
+    }
+
+    .section-heading {
+        text-align: center;
+    }
+
+    .collection .btn-section {
+        margin: var(--m-t-b);
+    }
+
+    .about .col-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .col-text {
+        width: 100%;
+        flex: 1;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .col-img {
+        flex: 1;
+    }
+
+    .arrival .btn {
+        width: 140px;
+        margin: var(--m-t-b);
+    }
+
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .collection .btn-col {
+        margin-bottom: 5px;
+        width: 80px;
+    }
+
+    .nav {
+        max-width: 560px;
+        min-width: 340px;
+    }
+
+    header {
+        padding: 15px 10px;
+    }
+
+    .nav .nav-icon {
+        width: 100%;
+        justify-content: flex-end;
+        margin-right: 10px;
+        padding-right: 10px;
+    }
+
+    header .burger_icon {
+        display: block;
+    }
+
+    .nav nav ul {
+        position: absolute;
+        top: 155%;
+        right: -10px;
+        padding: 10px;
+        flex-direction: column;
+        width: 240px;
+        background-color: #d4d4d425;
+        display: none;
+        opacity: 0;
+    }
+
+    .nav nav ul.active {
+        display: flex;
+        opacity: 1;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-2px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav nav ul a:hover {
+        color: var(--first-gra-clr);
+    }
+
+    .clr-two {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero .hero-img-off {
+        left: 10px;
+    }
+
+    footer .wrapper {
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    footer .col {
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+.btn-col.active {
+    background-color: #000;
+    color: #fff;
+}
+figure img {
+    width: 100%;
+    object-fit: cover;
+}
+figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+figure {
+    max-width: 500px; /* adjust as needed */
+    overflow: hidden;
+}
+
